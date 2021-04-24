@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "layout.html" %}
 
-    
-    <title>Document</title>
-</head>
-<body>
+    {% block body %}
     <button id="speech_btn">SPEECH</button>
     <button id="synthesis">Synthesis</button>
 
@@ -28,21 +20,4 @@
     <input type="text" id="their-id">
     <button id="make-call">発信</button>
     <video id="their-video" width="400px" autoplay muted playsinline style="border:solid 1px"></video>
-    
-</body>
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
-    https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>  
-<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
-
-<script src="https://cdn.webrtc.ecl.ntt.com/skyway-1.1.18.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="static/js/firebase.js"></script>
-<script src="static/js/skyway.js"></script>
-<script src="static/js/speechRecognition.js"></script>
-</html>
+    {% endblock %}
