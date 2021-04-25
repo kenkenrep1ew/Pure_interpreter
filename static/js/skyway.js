@@ -18,7 +18,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
 
 //Peer作成
 const peer = new Peer({
-    key: 'fc167318-fb92-4eee-a264-2182291225b0',
+    key: 'e4c3e686-7c25-4d7d-87dc-5473c39edf53',
     debug: 3
 });
 
