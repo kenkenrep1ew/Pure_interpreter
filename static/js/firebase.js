@@ -16,23 +16,38 @@ firebase.analytics();
 
 // firebase
 var newPostRef = firebase.database();
-let room = "room1"
+let thierRoom = "";
 
 const send = document.getElementById("send");
 const username = document.getElementById("username");
 const a_text = document.getElementById("msg_text");
-const output = document.getElementById("output");
+const thierSpeaking = document.getElementById("their-speaking");
+const thierTranslated = document.getElementById("their-translated");
 
 //Read new data when peer says something.
-newPostRef.ref(room).on("child_added", function(data){
+newPostRef.ref(thierRoom).on("child_added", function(data){
     const v = data.val();
     const k = data.key;
     let str = "";
 
-    // str += 'Name:' + v.username + '  Says:' + v.a_text + ' Translated:' + v.translation;
     str += 'Name:' + v.username + '  Says:' + v.a_text;
-    // if (v.username === username){
-      output.innerHTML = str;
-    // }
-    
+    thierSpeaking.innerHTML = str;
+
+    q = "q=" + v.a_text;
+    sourceData = q + "&target=en&key=AIzaSyCvYIoj74wELbE6TaMYRsDRrA4SLpre6ko";
+    $.ajax({
+		url:"https://translation.googleapis.com/language/translate/v2",
+		type:"POST",
+		data:sourceData,
+		dataType:"json",
+		timespan:1000 
+    }).done(function(data,textStatus){
+        console.log(textStatus);
+        // console.log(data.data.translations[0].translatedText);
+        thierTranslated.innerHTML += ' Translated:' + data.data.translations[0].translatedText;
+    }).fail(function(textStatus){
+        console.log(textStatus);
+    }).always(function(){
+        console.log("Done Ajax Thier-Translating");
+    }); 
 });

@@ -3,20 +3,17 @@
 {% block body %}
 <main>
 
-    <button id="speech_btn">SPEECH</button>
-    <button id="synthesis">Synthesis</button>
-
-    <div id="speech_out">
-
-    </div>
     <div id="peer_here">
         <div>
             <label>Name:</label>
             <input type="text" id="username">
         </div>
         <p id="my-id"></p>
+        <div id="my-speaking-language"></div>
+        <div id="my-translated-language"></div>
         <video id="my-video" width="100%" autoplay muted playsinline></video>
-        <div id="output"></div>
+        <div id="my-speaking"></div>
+        <div id="my-translated"></div>
 
     </div>
 
@@ -25,7 +22,12 @@
     <div id="peer_there">
         <input type="text" id="their-id">
         <button id="make-call">発信</button>
+        <div id="thier-id"></div>
+        <div id="their-speaking-language"></div>
+        <div id="their-translated-language"></div>
         <video id="their-video" width="100%" autoplay muted playsinline style="border:solid 1px"></video>
+        <div id="their-speaking"></div>
+        <div id="their-translated"></div>
     </div>  
 </main>
 {% endblock %}
