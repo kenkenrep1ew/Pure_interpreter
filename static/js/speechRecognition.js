@@ -33,6 +33,8 @@ speech.onresult = function(e){
     console.log("Done Ajax");
   });
   console.log(responseText);
+
+  //Here
   newPostRef.ref(room).push({
           username: username.value,
           a_text: e.results[0][0].transcript,
