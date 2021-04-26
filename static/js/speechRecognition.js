@@ -31,7 +31,7 @@ speech.onresult = function(e){
     console.log(textStatus);
     // console.log(data.data.translations[0].translatedText);
     responseText = data.data.translations[0].translatedText;
-    myTranslated.innerHTML += ' Translated:' + responseText;
+    myTranslated.innerHTML = responseText;
   }).fail(function(textStatus){
     console.log(textStatus);
   }).always(function(){
@@ -42,7 +42,7 @@ speech.onresult = function(e){
   //Here
   newPostRef.ref(myRoom).push({
           username: username.value,
-          a_text: e.results[0][0].transcript,
+          text: e.results[0][0].transcript,
           lang: speech.lang,
       });
       // a_text.value = "";

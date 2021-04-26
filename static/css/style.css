@@ -1,0 +1,15 @@
+
+
+#my-speaking {
+    color: lightgray;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+#my-translated {
+    color: black;
+    background-color: lightgray;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}

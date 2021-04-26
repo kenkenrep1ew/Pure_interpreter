@@ -16,11 +16,11 @@ firebase.analytics();
 
 // firebase
 var newPostRef = firebase.database();
-let thierRoom = "";
+let thierRoom = thierId;
 
 const send = document.getElementById("send");
 const username = document.getElementById("username");
-const a_text = document.getElementById("msg_text");
+const text = document.getElementById("msg_text");
 const thierSpeaking = document.getElementById("their-speaking");
 const thierTranslated = document.getElementById("their-translated");
 
@@ -28,10 +28,8 @@ const thierTranslated = document.getElementById("their-translated");
 newPostRef.ref(thierRoom).on("child_added", function(data){
     const v = data.val();
     const k = data.key;
-    let str = "";
 
-    str += 'Name:' + v.username + '  Says:' + v.a_text;
-    thierSpeaking.innerHTML = str;
+    thierSpeaking.innerHTML = v.lang + ": " + v.text;
 
     q = "q=" + v.a_text;
     sourceData = q + "&target=en&key=AIzaSyCvYIoj74wELbE6TaMYRsDRrA4SLpre6ko";
