@@ -21,9 +21,9 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
 //Peer作成
 const peer = new Peer({
     // APIkey for Localtest
-    key: 'fc167318-fb92-4eee-a264-2182291225b0',
+    // key: 'fc167318-fb92-4eee-a264-2182291225b0',
     // APIkey for Deploy-Server
-    // key: 'e4c3e686-7c25-4d7d-87dc-5473c39edf53',
+    key: 'e4c3e686-7c25-4d7d-87dc-5473c39edf53',
     debug: 3
 });
 
