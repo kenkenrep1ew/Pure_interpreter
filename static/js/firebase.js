@@ -31,7 +31,7 @@ newPostRef.ref(thierRoom).on("child_added", function(data){
 
     thierSpeaking.innerHTML = v.lang + ": " + v.text;
 
-    q = "q=" + v.a_text;
+    q = "q=" + v.text;
     sourceData = q + "&target=en&key=AIzaSyCvYIoj74wELbE6TaMYRsDRrA4SLpre6ko";
     $.ajax({
 		url:"https://translation.googleapis.com/language/translate/v2",
