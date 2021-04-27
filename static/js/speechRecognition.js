@@ -40,7 +40,7 @@ speech.onresult = function(e){
   console.log(responseText);
 
   //Here
-  newPostRef.ref(myId).push({
+  newPostRef.ref("T-Ken-PC").push({
           username: username.value,
           text: e.results[0][0].transcript,
           lang: speech.lang,
