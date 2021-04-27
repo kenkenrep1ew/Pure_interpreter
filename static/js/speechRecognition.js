@@ -7,7 +7,7 @@ speech.lang = "ja-JP";
 responseText = "";
 const mySpeaking = document.getElementById("my-speaking");
 const myTranslated = document.getElementById("my-translated");
-var myRoom = myId;
+// var myRoom = myId;
 
 
 window.addEventListener("load", (e) => {
@@ -40,7 +40,7 @@ speech.onresult = function(e){
   console.log(responseText);
 
   //Here
-  newPostRef.ref(myRoom).push({
+  newPostRef.ref(myId).push({
           username: username.value,
           text: e.results[0][0].transcript,
           lang: speech.lang,
