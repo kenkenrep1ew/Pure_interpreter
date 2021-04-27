@@ -42,7 +42,7 @@ newPostRef.ref(thierRoom).on("child_added", function(data){
     }).done(function(data,textStatus){
         console.log(textStatus);
         // console.log(data.data.translations[0].translatedText);
-        thierTranslated.innerHTML += ' Translated:' + data.data.translations[0].translatedText;
+        thierTranslated.innerHTML = ' Translated:' + data.data.translations[0].translatedText;
     }).fail(function(textStatus){
         console.log(textStatus);
     }).always(function(){

@@ -49,7 +49,7 @@ speech.onresult = function(e){
   // document.querySelector("#speech_out").innerHTML += "<p>You speak: " + e.results[0][0].transcript + "</p>";
 
 };
-
+// newPostRef.ref("T-Ken-SP").push({username: "ken-sp",text: "こんにちは",lang: "ja-JP",});
 speech.onend = () => {
   console.log("Speech Recognition is end.");
   speech.start();
