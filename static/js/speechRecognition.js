@@ -21,6 +21,7 @@ speech.onresult = function(e){
   q = "q="+e.results[0][0].transcript;
   sourceData = q + "&target=en&key=AIzaSyCvYIoj74wELbE6TaMYRsDRrA4SLpre6ko";
   
+  //Use Translation API bu ajax.
   $.ajax({
 		url:"https://translation.googleapis.com/language/translate/v2",
 		type:"POST",
@@ -39,8 +40,8 @@ speech.onresult = function(e){
   });
   console.log(responseText);
 
-  //Here
-  newPostRef.ref("T-Ken-PC").push({
+  //Push to firebase
+  newPostRef.ref(myId).push({
           username: username.value,
           text: e.results[0][0].transcript,
           lang: speech.lang,
