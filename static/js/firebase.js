@@ -41,7 +41,7 @@ document.getElementById('firebase-get-peer-id').onclick = () => {
 };
 
 //Read new data when peer says something.
-newPostRef.ref(thierId).on("child_added", function(data){
+newPostRef.ref(theirId).on("child_added", function(data){
     const v = data.val();
     const k = data.key;
 
