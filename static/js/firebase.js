@@ -16,17 +16,28 @@ firebase.analytics();
 
 // firebase
 var newPostRef = firebase.database();
-let thierRoom = thierId;
+let thierRoom = theirId;
 
 const send = document.getElementById("send");
 const username = document.getElementById("username");
 const text = document.getElementById("msg_text");
 const thierSpeaking = document.getElementById("their-speaking");
 const thierTranslated = document.getElementById("their-translated");
+const thierName = document.getElementById("thier-name");
 
 //Register User
 document.getElementById('firebase-register').onclick = () => {
     newPostRef.ref("CC/" + username.value + "/").set({peerId: myId});
+};
+
+//Get the Peer id from firebase
+document.getElementById('firebase-get-peer-id').onclick = () => {
+    newPostRef.ref("CC/").on('value', (snapshot) => {
+        var name = thierName.value;
+        d = snapshot.val();
+        document.getElementById('thier-id').textContent = d[name].peerId;
+        theirId = d[name].peerId;
+    });
 };
 
 //Read new data when peer says something.

@@ -1,7 +1,7 @@
 // Skyway
 let localStream;
 var myId;
-var thierId = "NotSetting";
+var theirId = "NotSetting";
 
 // カメラ映像取得
 navigator.mediaDevices.getUserMedia({video: true, audio: true})
@@ -37,8 +37,8 @@ peer.on('open', () => {
 
 // 発信処理
 document.getElementById('make-call').onclick = () => {
-    theirId = document.getElementById('their-id').value;
-    const mediaConnection = peer.call(theirID, localStream);
+
+    const mediaConnection = peer.call(theirId, localStream);
     setEventListener(mediaConnection);
   };
   
@@ -55,6 +55,6 @@ const setEventListener = mediaConnection => {
 //着信処理
 peer.on('call', mediaConnection => {
     mediaConnection.answer(localStream);
-    thierId = mediaConnection.remoteId;
+    // thierId = mediaConnection.remoteId;
     setEventListener(mediaConnection);
   });
