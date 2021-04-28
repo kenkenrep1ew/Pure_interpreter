@@ -55,6 +55,6 @@ const setEventListener = mediaConnection => {
 //着信処理
 peer.on('call', mediaConnection => {
     mediaConnection.answer(localStream);
-    // thierId = mediaConnection.remoteId;
+    theirId = mediaConnection.remoteId;
     setEventListener(mediaConnection);
   });
