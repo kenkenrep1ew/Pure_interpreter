@@ -1,3 +1,14 @@
+// speechRecognition.js
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+
+var speech = new SpeechRecognition();
+speech.lang = "ja-JP";
+var myLanguage = document.getElementById("my_language");
+
+responseText = "";
+const mySpeaking = document.getElementById("my-speaking");
+const myTranslated = document.getElementById("my-translated");
+const key = "AIzaSyCrBDPXwTKsgiHbLbUsjxq3oSWrCkWvmtw";
 
 document.getElementById('my-language-register').onclick = () => {
     speech.lang = myLanguage.value;

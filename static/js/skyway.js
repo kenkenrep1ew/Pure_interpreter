@@ -1,4 +1,7 @@
-
+// skyway.js
+let localStream;
+var myId;
+var theirId = "NotSetting";
 
 // カメラ映像取得
 navigator.mediaDevices.getUserMedia({video: true, audio: true})
