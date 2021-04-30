@@ -2,12 +2,16 @@
 
 {% block body %}
 <main>
-
     <div id="peer_here">
         <div>
             <label>Name:</label>
             <input type="text" id="username">
             <button id="firebase-register">firebase登録</button>
+        </div>
+        <div>
+            <label>Language:</label>
+            <input type="text" id="my_language">
+            <button id="my-language-register">言語</button>
         </div>
         <p id="my-id"></p>
         <div id="my-speaking-language"></div>
@@ -35,4 +39,21 @@
         <div id="their-translated"></div>
     </div>  
 </main>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>  
+<script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+
+<script src="https://cdn.webrtc.ecl.ntt.com/skyway-1.1.18.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- <script src="static/js/index.js"></script> -->
+<script src="static/js/skyway.js"></script>
+<script src="static/js/firebase.js"></script>
+<script src="static/js/speechRecognition.js"></script>
 {% endblock %}

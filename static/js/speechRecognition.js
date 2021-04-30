@@ -1,14 +1,7 @@
-// SpeechRecognition
-var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 
-var speech = new SpeechRecognition();
-speech.lang = "ja-JP";
-
-responseText = "";
-const mySpeaking = document.getElementById("my-speaking");
-const myTranslated = document.getElementById("my-translated");
-// var myRoom = myId;
-
+document.getElementById('my-language-register').onclick = () => {
+    speech.lang = myLanguage.value;
+};
 
 window.addEventListener("load", (e) => {
     speech.start();
@@ -19,7 +12,7 @@ speech.onresult = function(e){
   mySpeaking.innerHTML = e.results[0][0].transcript;
   // Here !!!
   q = "q="+e.results[0][0].transcript;
-  sourceData = q + "&target=en&key=AIzaSyCvYIoj74wELbE6TaMYRsDRrA4SLpre6ko";
+  sourceData = q + "&target=en&key=" + key;
   
   //Use Translation API bu ajax.
   $.ajax({
