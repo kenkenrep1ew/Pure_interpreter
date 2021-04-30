@@ -1,20 +1,3 @@
-// skyway.js
-let localStream;
-var myId;
-var theirId = "NotSetting";
-
-// speechRecognition.js
-var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
-
-var speech = new SpeechRecognition();
-speech.lang = "ja-JP";
-var myLanguage = document.getElementById("my_language");
-
-responseText = "";
-const mySpeaking = document.getElementById("my-speaking");
-const myTranslated = document.getElementById("my-translated");
-const key = "AIzaSyCrBDPXwTKsgiHbLbUsjxq3oSWrCkWvmtw";
-
 //firebase.js
 const send = document.getElementById("send");
 const username = document.getElementById("username");
