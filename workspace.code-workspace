@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../tools"
+		},
+		{
+			"path": "../firebase_sample"
+		}
+	],
+	"settings": {}
+}
